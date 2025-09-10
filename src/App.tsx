@@ -1,10 +1,18 @@
 import { useState } from "react";
-import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <div className="bg_dark min-h-screen ">
+      <Navbar />
+      <main className="max-w-5xl mx-auto px-4">
+        <section id="home" className="pt-20">
+          <Home />
+        </section>
+      </main>
+    </div>
+  );
 }
 
 export default App;

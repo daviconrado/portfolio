@@ -7,6 +7,7 @@
   --bg-purple: #7b4ae2;
   --bg-rose: #c83267;
   --bg-navbar: rgba(123, 74, 226, 0.05);
+  --bg-summary: rgba(123, 74, 226, 0.15);
 }
 
 .bg_dark {
@@ -19,4 +20,8 @@
 
 .bg_navbar {
   background-color: var(--bg-navbar);
+}
+
+.bg_summary {
+  background-color: var(--bg-summary);
 }

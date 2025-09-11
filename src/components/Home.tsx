@@ -5,10 +5,10 @@ import { RiDownloadLine } from "react-icons/ri";
 
 const Home = () => {
   return (
-    <div className="grid grid-cols-3 h-100 mt-5">
+    <div className="grid grid-cols-3 h-screen">
       <div className="flex flex-col justify-center gap-5">
         <ContentSummary emoji="👋" content="Saudações" />
-        <h1 className="font-extrabold text-6xl">
+        <h1 className="font-extrabold text-5xl">
           Davi
           <br />
           Conrado
@@ -36,7 +36,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <div className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden">
+        <div className="w-62 h-62 md:w-84 md:h-84 lg:w-100 lg:h-100 rounded-full overflow-hidden">
           <img src="avatar.svg" alt="" />
         </div>
       </div>

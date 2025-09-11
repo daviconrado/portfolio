@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="32" height="32"> 
+  <rect width="200" height="200" fill="transparent"/>
+  <text 
+    x="50%" 
+    y="55%" 
+    text-anchor="middle" 
+    dominant-baseline="middle"
+    font-family="Pacifico, 'Brush Script MT', cursive" 
+    font-size="130" 
+    font-weight="400" 
+    fill="#7b4ae2">
+    D
+  </text>
+</svg>

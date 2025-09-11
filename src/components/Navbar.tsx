@@ -1,22 +1,51 @@
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaHome,
+  FaUser,
+  FaLaptopCode,
+  FaTools,
+  FaEnvelope,
+} from "react-icons/fa";
 
-const Navbar = () => {
-  const sections = ["home", "about", "projects", "skills", "contact"];
-  const [active, setActive] = useState("home");
+const sections = ["home", "about", "projects", "skills", "contact"] as const;
+type Section = (typeof sections)[number];
+
+const topNavLinkClass = (active: string, id: string) =>
+  `${
+    active === id ? "text-purple-600" : "text-gray-400 hover:text-white"
+  } mx-3`;
+
+export default function Navbar() {
+  const [active, setActive] = useState<Section>("home");
+  const [compact, setCompact] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.6, //60% da pagina
+      threshold: 0.55,
     };
 
-    const observerCallback = (entries: any) => {
-      entries.forEach((entry: any) => {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id);
-        }
-      });
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      const homeEntry = entries.find((e) => e.target.id === "home");
+      if (homeEntry && homeEntry.isIntersecting) {
+        setActive("home");
+        setCompact(false);
+        return;
+      }
+
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort(
+          (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0)
+        );
+
+      if (visible.length > 0) {
+        const id = visible[0].target.id as Section;
+        setActive(id);
+        setCompact(id !== "home");
+      }
     };
 
     const observer = new IntersectionObserver(
@@ -29,69 +58,106 @@ const Navbar = () => {
       if (el) observer.observe(el);
     });
 
-    return () => {
-      observer.disconnect();
-    };
+    if (window.scrollY > 120) setCompact(true);
+
+    return () => observer.disconnect();
   }, []);
 
-  const handleClick = (id: string) => (e: any) => {
-    e.preventDefault();
+  const handleClick = (id: Section) => (e?: React.MouseEvent) => {
+    e?.preventDefault();
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
       setActive(id);
+      setCompact(id !== "home");
     }
   };
 
-  const linkClass = (id: string) =>
-    `${
-      active === id ? "text-purple-700" : "text-gray-400 hover:text-white"
-    } mx-3`;
+  const iconList: { id: Section; label: string; Icon: React.ElementType }[] = [
+    { id: "home", label: "Home", Icon: FaHome },
+    { id: "about", label: "Sobre", Icon: FaUser },
+    { id: "projects", label: "Projetos", Icon: FaLaptopCode },
+    { id: "skills", label: "Skills", Icon: FaTools },
+    { id: "contact", label: "Contato", Icon: FaEnvelope },
+  ];
 
   return (
-    <header className="fixed w-full z-40 mt-3">
-      <nav className="max-w-6xl  mx-auto py-3 px-6 flex items-center justify-between rounded-lg bg_navbar">
-        <img src="/logo.svg" alt="" />
-        <div className="flex items-center gap-3">
-          <a
-            href="#home"
-            onClick={handleClick("home")}
-            className={linkClass("home")}
+    <>
+      <AnimatePresence>
+        {!compact && (
+          <motion.header
+            initial={{ opacity: 0, y: -18 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -18 }}
+            transition={{ duration: 0.22 }}
+            className="fixed w-full z-40 mt-3 pointer-events-auto"
+            aria-hidden={compact}
           >
-            Home
-          </a>
-          <a
-            href="#about"
-            onClick={handleClick("about")}
-            className={linkClass("about")}
-          >
-            Sobre mim
-          </a>
-          <a
-            href="#projects"
-            onClick={handleClick("projects")}
-            className={linkClass("projects")}
-          >
-            Projetos
-          </a>
-          <a
-            href="#skills"
-            onClick={handleClick("skills")}
-            className={linkClass("skills")}
-          >
-            Skills
-          </a>
-          <a
-            href="#contact"
-            onClick={handleClick("contact")}
-            className={linkClass("contact")}
-          >
-            Contato
-          </a>
-        </div>
-      </nav>
-    </header>
-  );
-};
+            <nav className="max-w-6xl mx-auto py-3 px-6 flex items-center justify-between rounded-lg bg_navbar backdrop-blur-sm">
+              <img src="/logo.svg" alt="logo" className="h-8" />
+              <div className="hidden md:flex items-center gap-3">
+                {sections.map((id) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    onClick={handleClick(id as Section)}
+                    className={topNavLinkClass(active, id)}
+                    aria-current={active === id ? "page" : undefined}
+                  >
+                    {id === "home"
+                      ? "Home"
+                      : id === "about"
+                      ? "Sobre mim"
+                      : id === "projects"
+                      ? "Projetos"
+                      : id === "skills"
+                      ? "Skills"
+                      : "Contato"}
+                  </a>
+                ))}
+              </div>
 
-export default Navbar;
+              <div className="md:hidden">
+                <button className="p-2 rounded-md text-gray-300">Menu</button>
+              </div>
+            </nav>
+          </motion.header>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {compact && (
+          <motion.nav
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 24 }}
+            transition={{ duration: 0.28 }}
+            className="fixed bottom-5 left-1/2 z-50 transform -translate-x-1/2"
+            aria-label="navegação compacta"
+          >
+            <div className="flex items-center gap-3 px-3 py-2 rounded-full bg-black/60 backdrop-blur-sm border border-white/5 shadow-lg">
+              {iconList.map(({ id, label, Icon }) => {
+                const isActive = active === id;
+                return (
+                  <button
+                    key={id}
+                    onClick={handleClick(id)}
+                    aria-label={label}
+                    aria-pressed={isActive}
+                    className={`flex items-center justify-center w-10 h-10 rounded-full transition-transform cursor-pointer ${
+                      isActive
+                        ? "bg-purple-600 text-white scale-105 shadow-md"
+                        : "bg-white/5 text-gray-300 hover:scale-105"
+                    }`}
+                  >
+                    <Icon />
+                  </button>
+                );
+              })}
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

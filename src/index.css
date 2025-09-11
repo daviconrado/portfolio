@@ -17,6 +17,9 @@
 .bg_purple {
   background-color: var(--bg-purple);
 }
+.bg_rose {
+  background-color: var(--bg-rose);
+}
 
 .bg_navbar {
   background-color: var(--bg-navbar);

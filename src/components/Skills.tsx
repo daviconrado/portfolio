@@ -47,22 +47,24 @@ const Skills = () => {
     { Icon: SiMongodb, label: "MongoDB" },
   ];
   return (
-    <div className="flex flex-col justify-center items-center h-screen gap-5">
+    <div className="flex flex-col justify-center items-center h-screen gap-8">
       <div className="flex flex-col justify-center items-center gap-4 mb-3">
         <ContentSummary emoji="💻" content=" Skills · Experiências" />
         <h2 className="font-extrabold text-3xl">Tecnologias e habilidades</h2>
       </div>
-      <p>Tecnologias que utilizo no dia a dia:</p>
-      <div className="flex gap-5 flex-wrap justify-center items-center">
-        {mostUsedtechs.map((t) => (
-          <IconWithTooltip key={t.label} Icon={t.Icon} label={t.label} />
-        ))}
-      </div>
-      <p>Tecnologias que já utilizei em projetos:</p>
-      <div className="flex gap-5 flex-wrap justify-center items-center">
-        {otherTechs.map((t) => (
-          <IconWithTooltip key={t.label} Icon={t.Icon} label={t.label} />
-        ))}
+      <div className="flex flex-col gap-6 max-w-4xl text-center">
+        <p>Tecnologias que utilizo no dia a dia:</p>
+        <div className="flex gap-5 flex-wrap justify-center items-center">
+          {mostUsedtechs.map((t) => (
+            <IconWithTooltip key={t.label} Icon={t.Icon} label={t.label} />
+          ))}
+        </div>
+        <p>Tecnologias que já utilizei em projetos:</p>
+        <div className="flex gap-5 flex-wrap justify-center items-center">
+          {otherTechs.map((t) => (
+            <IconWithTooltip key={t.label} Icon={t.Icon} label={t.label} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const Home = () => {
           <br />
           Conrado
         </h1>
-        <p className="font-light">Web full-stack developer</p>
+        <p className="font-light">Full-stack developer · Software Engineer</p>
         <div className="flex gap-3">
           <a
             href="https://linkedin.com/in/daviconrado"

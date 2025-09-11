@@ -2,7 +2,11 @@ import React from "react";
 
 const IconWithTooltip = ({ Icon, label }: { Icon: any; label: string }) => (
   <div className="relative group flex items-center justify-center">
-    <Icon size={30} className="text-[#7b4ae2]" aria-hidden="true" />
+    <Icon
+      size={45}
+      className="text-[#7b4ae2] hover:translate-y-0.5 transition-transform"
+      aria-hidden="true"
+    />
 
     <div
       role="tooltip"

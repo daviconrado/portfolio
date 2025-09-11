@@ -8,7 +8,7 @@ const AboutMe = () => {
       <div className="flex items-center justify-content-center">
         <img
           src={fotoPessoal}
-          alt=""
+          alt="Foto de Davi Conrado Neto no espelho"
           className="object-cover rounded-full w-80 h-80 mx-auto"
         />
       </div>

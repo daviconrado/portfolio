@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </section>
         <section id="about">
           <AboutMe />
+        </section>
+        <section id="skills">
+          <Skills />
         </section>
       </main>
     </div>

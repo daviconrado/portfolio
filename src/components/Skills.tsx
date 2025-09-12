@@ -1,6 +1,6 @@
 import React from "react";
 import ContentSummary from "./ContentSummary";
-import { FaJava } from "react-icons/fa";
+import { FaAws, FaJava } from "react-icons/fa";
 import {
   SiBootstrap,
   SiCss3,
@@ -45,6 +45,7 @@ const Skills = () => {
     { Icon: SiBootstrap, label: "Bootstrap" },
     { Icon: SiFigma, label: "Figma" },
     { Icon: SiMongodb, label: "MongoDB" },
+    { Icon: FaAws, label: "AWS" },
   ];
   return (
     <div className="flex flex-col justify-center items-center h-screen gap-8">

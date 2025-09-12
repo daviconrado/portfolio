@@ -6,6 +6,7 @@ import Skills from "./components/Skills";
 
 import { motion, useScroll } from "motion/react";
 import SectionLine from "./components/SectionLine";
+import Contact from "./components/Contact";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -36,6 +37,10 @@ function App() {
         <SectionLine />
         <section id="skills">
           <Skills />
+        </section>
+        <SectionLine />
+        <section id="contact">
+          <Contact />
         </section>
       </main>
     </div>

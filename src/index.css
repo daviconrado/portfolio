@@ -8,6 +8,12 @@
   --bg-rose: #c83267;
   --bg-navbar: rgba(123, 74, 226, 0.05);
   --bg-summary: rgba(123, 74, 226, 0.15);
+
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .bg_dark {

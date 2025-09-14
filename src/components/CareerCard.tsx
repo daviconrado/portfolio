@@ -27,7 +27,7 @@ const CareerCard = ({
   ];
 
   const formatMonthYear = (d: Date | null) =>
-    d ? `${months[d.getMonth()]} ${d.getFullYear()}` : "—";
+    d ? `${months[d.getMonth()]} ${d.getFullYear()}` : "";
 
   const diffMonths = (start: Date, end: Date) => {
     const years = end.getFullYear() - start.getFullYear();
@@ -36,7 +36,7 @@ const CareerCard = ({
   };
 
   const formatDuration = (start: Date | null, end: Date | null) => {
-    if (!start) return "—";
+    if (!start) return "";
     const finish = end ?? new Date();
     const totalMonths = diffMonths(start, finish);
     if (totalMonths < 12)

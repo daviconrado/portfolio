@@ -31,7 +31,6 @@ function App() {
         <section id="home">
           <Home />
         </section>
-        <SectionLine />
         <section id="about">
           <AboutMe />
         </section>

@@ -7,11 +7,12 @@ import Skills from "./components/Skills";
 import { motion, useScroll } from "motion/react";
 import SectionLine from "./components/SectionLine";
 import Contact from "./components/Contact";
+import Career from "./components/Career";
 
 function App() {
   const { scrollYProgress } = useScroll();
   return (
-    <div className="bg_dark">
+    <div className="bg_dark overflow-hidden">
       <motion.div
         id="scroll-indicator"
         style={{
@@ -37,6 +38,10 @@ function App() {
         <SectionLine />
         <section id="skills">
           <Skills />
+        </section>
+
+        <section id="career">
+          <Career />
         </section>
         <SectionLine />
         <section id="contact">

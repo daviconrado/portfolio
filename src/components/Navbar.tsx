@@ -6,9 +6,17 @@ import {
   FaLaptopCode,
   FaTools,
   FaEnvelope,
+  FaSuitcase,
 } from "react-icons/fa";
 
-const sections = ["home", "about", "projects", "skills", "contact"] as const;
+const sections = [
+  "home",
+  "about",
+  "projects",
+  "skills",
+  "career",
+  "contact",
+] as const;
 type Section = (typeof sections)[number];
 
 const topNavLinkClass = (active: string, id: string) =>
@@ -75,9 +83,10 @@ export default function Navbar() {
 
   const iconList: { id: Section; label: string; Icon: React.ElementType }[] = [
     { id: "home", label: "Home", Icon: FaHome },
-    { id: "about", label: "Sobre", Icon: FaUser },
+    { id: "about", label: "Sobre mim", Icon: FaUser },
     { id: "projects", label: "Projetos", Icon: FaLaptopCode },
     { id: "skills", label: "Skills", Icon: FaTools },
+    { id: "career", label: "Carreira", Icon: FaSuitcase },
     { id: "contact", label: "Contato", Icon: FaEnvelope },
   ];
 
@@ -112,6 +121,8 @@ export default function Navbar() {
                       ? "Projetos"
                       : id === "skills"
                       ? "Skills"
+                      : id === "career"
+                      ? "Carreira"
                       : "Contato"}
                   </a>
                 ))}

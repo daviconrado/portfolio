@@ -4,7 +4,7 @@ import CareerCard from "./CareerCard";
 
 const Career = () => {
   return (
-    <div className="flex flex-col justify-center items-center gap-7 my-10">
+    <div className="flex flex-col justify-center items-center gap-7 py-10">
       <ContentSummary emoji="💼" content="Carreira" />
       <h2 className="font-extrabold text-3xl">Minha trajetoria até aqui</h2>
       <div className="grid grid-cols-2 h-screen w-screen text-center">

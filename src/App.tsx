@@ -8,6 +8,7 @@ import { motion, useScroll } from "motion/react";
 import SectionLine from "./components/SectionLine";
 import Contact from "./components/Contact";
 import Career from "./components/Career";
+import Footer from "./components/Footer";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -47,6 +48,7 @@ function App() {
           <Contact />
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

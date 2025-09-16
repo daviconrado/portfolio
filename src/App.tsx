@@ -9,6 +9,7 @@ import SectionLine from "./components/SectionLine";
 import Contact from "./components/Contact";
 import Career from "./components/Career";
 import Footer from "./components/Footer";
+import Projects from "./components/Projects";
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -36,6 +37,10 @@ function App() {
           <AboutMe />
         </section>
         <SectionLine />
+
+        <section id="projects">
+          <Projects />
+        </section>
         <section id="skills">
           <Skills />
         </section>

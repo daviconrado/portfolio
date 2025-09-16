@@ -48,7 +48,7 @@ const Skills = () => {
     { Icon: FaAws, label: "AWS" },
   ];
   return (
-    <div className="flex flex-col justify-center items-center h-screen gap-8">
+    <div className="flex flex-col justify-center items-center h-120 gap-8">
       <div className="flex flex-col justify-center items-center gap-4 mb-3">
         <ContentSummary emoji="💻" content=" Skills · Experiências" />
         <h2 className="font-extrabold text-3xl">Tecnologias e habilidades</h2>

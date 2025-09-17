@@ -38,3 +38,7 @@ html {
 .bg_summary {
   background-color: var(--bg-summary);
 }
+
+.border_color {
+  border: #7b4ae2;
+}

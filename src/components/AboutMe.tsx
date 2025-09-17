@@ -21,11 +21,12 @@ const AboutMe = () => {
         </p>
         <p>
           👨‍💻 Há mais de 1 ano desenvolvendo e programando interfaces com
-          Typescript, Java, React.js, Node.js.
+          Typescript, Spring Boot, React.js, Node.js.
           <br /> 🎓 Acadêmico de Engenharia de Software na UTFPR em Dois
           Vizinhos - PR. <br />
-          💡Interesses em desenvolvimento Front-end com React.js e Back-end com
-          Spring Boot e Node.js
+          💡 Meus interesses se concentram na criação de soluções de ponta a
+          ponta para a web, abrangendo desde a interação do usuário até a
+          complexidade dos sistemas de dados.
         </p>
         <p>🚀 Tentando ser um pouquinho melhor do que ontem todos dias.</p>
       </div>

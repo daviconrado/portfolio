@@ -1,12 +1,16 @@
 import { div } from "motion/react-client";
 import ContentSummary from "./ContentSummary";
 import CareerCard from "./CareerCard";
+import TypingEffect from "./TypingEffect";
 
 const Career = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-7 py-10">
       <ContentSummary emoji="💼" content="Carreira" />
-      <h2 className="font-extrabold text-3xl">Minha trajetoria até aqui</h2>
+      <TypingEffect
+        text="Minha trajetoria até aqui"
+        className="font-extrabold text-3xl"
+      />
       <div className="grid grid-cols-2 h-screen w-screen text-center">
         <div className="flex flex-col items-center gap-8">
           <h3 className="font-extrabold text-xl">Área profissional</h3>

@@ -1,6 +1,7 @@
 import React from "react";
 import TechInfoLabel from "./TechCardTag";
 import TechCardTag from "./TechCardTag";
+import { motion, rgba } from "framer-motion";
 
 const ProjectCard = ({
   header,
@@ -15,7 +16,10 @@ const ProjectCard = ({
   techs: string[];
 }) => {
   return (
-    <div className="flex border border-purple-600 h-100 rounded-xl flex-col p-4 gap-5">
+    <motion.div
+      className="flex border border-purple-600 h-100 rounded-xl flex-col p-4 gap-5"
+      whileHover={{ scale: 1.02 }}
+    >
       <header className="font-bold text-xl">{header}</header>
       <p className="text-sm">{content}</p>
       <div className="flex gap-2 flex-wrap">
@@ -26,7 +30,7 @@ const ProjectCard = ({
       <div className="flex-grow overflow-hidden rounded">
         <img src={imgUrl} alt="" className="w-full h-full object-cover" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

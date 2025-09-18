@@ -1,13 +1,22 @@
 import React from "react";
 import ContentSummary from "./ContentSummary";
 import CopyButton from "./CopyButton";
+import { RotateWords } from "./RotateWords";
 
 const Contact = () => {
   return (
     <div className="flex flex-col justify-center items-center h-screen gap-4">
       <div className="flex flex-col justify-center items-center gap-4 mb-3">
         <ContentSummary emoji="📬" content="Contatos" />
-        <h2 className="font-extrabold text-3xl">Vamos conversar!</h2>
+        <RotateWords
+          text="Vamos"
+          words={[
+            "conversar",
+            "trabalhar juntos",
+            "construir algo incrível",
+            "nos conectar",
+          ]}
+        />
       </div>
       <div className="flex flex-col gap-5 max-w-4xl text-center">
         <p>

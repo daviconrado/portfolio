@@ -21,6 +21,7 @@ import {
 } from "react-icons/si";
 import IconWithTooltip from "./IconWithTooltip";
 import { TbBrandCSharp } from "react-icons/tb";
+import TypingEffect from "./TypingEffect";
 
 const Skills = () => {
   const mostUsedtechs = [
@@ -51,7 +52,10 @@ const Skills = () => {
     <div className="flex flex-col justify-center items-center h-120 gap-8">
       <div className="flex flex-col justify-center items-center gap-4 mb-3">
         <ContentSummary emoji="💻" content=" Skills · Experiências" />
-        <h2 className="font-extrabold text-3xl">Tecnologias e habilidades</h2>
+        <TypingEffect
+          text="Tecnologias e habilidades"
+          className="font-extrabold text-3xl"
+        />
       </div>
       <div className="flex flex-col gap-6 max-w-4xl text-center">
         <p>Tecnologias que utilizo no dia a dia:</p>

@@ -1,19 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ContentSummary from "./ContentSummary.tsx";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RiDownloadLine } from "react-icons/ri";
+import TypingEffect from "./TypingEffect.tsx";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
+const avatarVariants: Variants = {
+  hidden: {
+    scale: 0,
+  },
+
+  show: {
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.2,
+      ease: [0, 0.71, 0.2, 1.01],
+    },
+  },
+  sway: {
+    scale: 1,
+    rotate: [-2, 2, -2],
+    y: [0, -10, 0],
+    transition: {
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
 const Home = () => {
+  const [animation, setAnimation] = useState("hidden");
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimation("show");
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="grid grid-cols-3 h-screen">
       <div className="flex flex-col justify-center gap-5">
         <ContentSummary emoji="👋" content="Saudações" />
-        <h1 className="font-extrabold text-5xl">
-          Davi
-          <br />
-          Conrado
-        </h1>
-        <p className="font-light">Full-stack developer · Software Engineer</p>
+        <TypingEffect
+          text={`Davi\nConrado`}
+          className="font-extrabold text-5xl text-wrap"
+        />
+        <TypingEffect
+          text="Full-stack developer · Software Engineer"
+          className="font-light"
+          as="p"
+        />
+
         <div className="flex gap-3">
           <a
             href="https://linkedin.com/in/daviconrado"
@@ -37,7 +76,18 @@ const Home = () => {
       </div>
       <div className="flex justify-center items-center">
         <div className="w-62 h-62 md:w-84 md:h-84 lg:w-100 lg:h-100 rounded-full overflow-hidden">
-          <img src="avatar.svg" alt="" />
+          <motion.img
+            src="avatar.svg"
+            alt=""
+            variants={avatarVariants}
+            initial="hidden"
+            animate={animation}
+            onAnimationComplete={(definition) => {
+              if (definition == "show") {
+                setAnimation("sway");
+              }
+            }}
+          />
         </div>
       </div>
       <div className="flex flex-col justify-center items-end gap-4">

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const CareerCard = ({
   title,
@@ -50,7 +51,10 @@ const CareerCard = ({
   };
 
   return (
-    <div className="w-100 border border-purple-700 flex flex-col p-6 items-start gap-2 rounded-lg">
+    <motion.div
+      className="w-100 border border-purple-700 flex flex-col p-6 items-start gap-2 rounded-lg"
+      whileHover={{ scale: 1.02 }}
+    >
       <h4 className="font-bold">{title}</h4>
       <p className="text-gray-500 text-left">{body}</p>
 
@@ -63,7 +67,7 @@ const CareerCard = ({
           {finishDate ? formatMonthYear(finishDate) : "Atualmente"}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

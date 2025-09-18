@@ -13,7 +13,7 @@ const Contact = () => {
           words={[
             "conversar",
             "trabalhar juntos",
-            "construir algo incrível",
+            "construir algo legal",
             "nos conectar",
           ]}
         />

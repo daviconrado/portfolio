@@ -1,6 +1,3 @@
-import { div, p } from "motion/react-client";
-import React from "react";
-
 const TechCardTag = ({ tech }: { tech: string }) => {
   return (
     <div className="flex">

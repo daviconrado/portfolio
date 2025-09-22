@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FiCopy, FiCheck } from "react-icons/fi";
 
 export default function CopyButton({

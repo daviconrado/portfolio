@@ -1,5 +1,3 @@
-import React from "react";
-
 const IconWithTooltip = ({ Icon, label }: { Icon: any; label: string }) => (
   <div className="relative group flex items-center justify-center">
     <Icon

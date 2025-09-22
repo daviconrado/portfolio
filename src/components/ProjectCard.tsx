@@ -1,7 +1,5 @@
-import React from "react";
-import TechInfoLabel from "./TechCardTag";
 import TechCardTag from "./TechCardTag";
-import { motion, rgba } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ProjectCard = ({
   header,
@@ -17,7 +15,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      className="flex border border-purple-600 h-100 rounded-xl flex-col p-4 gap-5"
+      className="flex border border-purple-700 h-100 rounded-xl flex-col p-4 gap-5"
       whileHover={{ scale: 1.02 }}
     >
       <header className="font-bold text-xl">{header}</header>

@@ -1,4 +1,3 @@
-import React from "react";
 import ContentSummary from "./ContentSummary";
 import CopyButton from "./CopyButton";
 import { RotateWords } from "./RotateWords";

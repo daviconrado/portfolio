@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ContentSummary from "./ContentSummary.tsx";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RiDownloadLine } from "react-icons/ri";

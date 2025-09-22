@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import { useRef, type ElementType } from "react";
 import { motion, useInView } from "framer-motion";
 
 type Props = {
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
   text: string;
   className?: string;
 };

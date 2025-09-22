@@ -1,4 +1,3 @@
-import React from "react";
 import ContentSummary from "./ContentSummary";
 import { FaAws, FaJava } from "react-icons/fa";
 import {

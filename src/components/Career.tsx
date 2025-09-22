@@ -1,4 +1,3 @@
-import { div } from "motion/react-client";
 import ContentSummary from "./ContentSummary";
 import CareerCard from "./CareerCard";
 import TypingEffect from "./TypingEffect";

@@ -1,4 +1,3 @@
-import React from "react";
 import ContentSummary from "./ContentSummary";
 import ProjectCard from "./ProjectCard";
 import cartoonPadlock from "../assets/cartoonPadlock.svg";

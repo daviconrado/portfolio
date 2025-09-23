@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaSuitcase,
 } from "react-icons/fa";
+import { useMediaQuery } from "./hooks/useMediaQuery";
 
 const sections = [
   "home",
@@ -90,10 +91,12 @@ export default function Navbar() {
     { id: "contact", label: "Contato", Icon: FaEnvelope },
   ];
 
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
   return (
     <>
       <AnimatePresence>
-        {!compact && (
+        {!compact && !isMobile && (
           <motion.header
             initial={{ opacity: 0, y: -18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,17 +130,13 @@ export default function Navbar() {
                   </a>
                 ))}
               </div>
-
-              <div className="md:hidden">
-                <button className="p-2 rounded-md text-gray-300">Menu</button>
-              </div>
             </nav>
           </motion.header>
         )}
       </AnimatePresence>
 
       <AnimatePresence>
-        {compact && (
+        {(compact || isMobile) && (
           <motion.nav
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}

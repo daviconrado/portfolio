@@ -17,7 +17,7 @@ export function RotateWords({
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="font-extrabold text-4xl flex items-center jusitfy-center gap-1.5">
+    <div className="font-extrabold text-2xl md:text-4xl flex items-center jusitfy-center gap-1.5">
       {text}{" "}
       <AnimatePresence mode="wait">
         <motion.p

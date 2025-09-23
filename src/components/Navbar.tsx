@@ -32,8 +32,8 @@ export default function Navbar() {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "0px",
-      threshold: 0.55,
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0,
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {

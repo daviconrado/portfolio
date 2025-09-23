@@ -1,4 +1,4 @@
-import ContentSummary from "./ContentSummary";
+import ContentSummary from "../ContentSummary";
 import { FaAws, FaJava } from "react-icons/fa";
 import {
   SiBootstrap,
@@ -18,9 +18,9 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import IconWithTooltip from "./IconWithTooltip";
+import IconWithTooltip from "../IconWithTooltip";
 import { TbBrandCSharp } from "react-icons/tb";
-import TypingEffect from "./TypingEffect";
+import TypingEffect from "../textAnimations/TypingEffect";
 
 const Skills = () => {
   const mostUsedtechs = [

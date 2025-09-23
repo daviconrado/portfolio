@@ -1,14 +1,14 @@
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import AboutMe from "./components/AboutMe";
-import Skills from "./components/Skills";
+import Home from "./components/sections/Home";
+import AboutMe from "./components/sections/AboutMe";
+import Skills from "./components/sections/Skills";
 
 import { motion, useScroll } from "motion/react";
 import SectionLine from "./components/SectionLine";
-import Contact from "./components/Contact";
-import Career from "./components/Career";
+import Contact from "./components/sections/Contact";
+import Career from "./components/sections/Career";
 import Footer from "./components/Footer";
-import Projects from "./components/Projects";
+import Projects from "./components/sections/Projects";
 
 function App() {
   const { scrollYProgress } = useScroll();

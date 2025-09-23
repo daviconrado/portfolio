@@ -1,6 +1,6 @@
-import ContentSummary from "./ContentSummary";
-import CareerCard from "./CareerCard";
-import TypingEffect from "./TypingEffect";
+import ContentSummary from "../ContentSummary";
+import CareerCard from "../cards/CareerCard";
+import TypingEffect from "../textAnimations/TypingEffect";
 
 const Career = () => {
   return (

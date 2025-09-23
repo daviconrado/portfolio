@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import ContentSummary from "./ContentSummary.tsx";
+import ContentSummary from "../ContentSummary.tsx";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RiDownloadLine } from "react-icons/ri";
-import TypingEffect from "./TypingEffect.tsx";
+import TypingEffect from "../textAnimations/TypingEffect.tsx";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 

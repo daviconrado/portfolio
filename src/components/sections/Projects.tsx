@@ -1,7 +1,7 @@
-import ContentSummary from "./ContentSummary";
-import ProjectCard from "./ProjectCard";
-import cartoonPadlock from "../assets/cartoonPadlock.svg";
-import TypingEffect from "./TypingEffect";
+import ContentSummary from "../ContentSummary";
+import ProjectCard from "../cards/ProjectCard";
+import cartoonPadlock from "../../assets/cartoonPadlock.svg";
+import TypingEffect from "../textAnimations/TypingEffect";
 
 const Projects = () => {
   return (

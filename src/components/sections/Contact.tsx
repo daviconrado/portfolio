@@ -1,6 +1,6 @@
-import ContentSummary from "./ContentSummary";
-import CopyButton from "./CopyButton";
-import { RotateWords } from "./RotateWords";
+import ContentSummary from "../ContentSummary";
+import CopyButton from "../CopyButton";
+import { RotateWords } from "../textAnimations/RotateWords";
 
 const Contact = () => {
   return (

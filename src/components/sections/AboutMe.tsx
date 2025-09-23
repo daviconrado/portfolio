@@ -1,6 +1,6 @@
 import React from "react";
-import ContentSummary from "./ContentSummary";
-import fotoPessoal from "../assets/fotoPessoal.jpg";
+import ContentSummary from "../ContentSummary";
+import fotoPessoal from "../../assets/fotoPessoal.jpg";
 import { motion, useInView } from "framer-motion";
 import type { Variants } from "framer-motion";
 

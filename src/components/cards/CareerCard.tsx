@@ -51,13 +51,13 @@ const CareerCard = ({
 
   return (
     <motion.div
-      className="w-100 border border-purple-700 flex flex-col p-6 items-start gap-2 rounded-lg"
+      className="w-80 md:w-2xl lg:w-full border border-purple-700 flex flex-col p-6 items-start gap-2 rounded-lg"
       whileHover={{ scale: 1.02 }}
     >
       <h4 className="font-bold">{title}</h4>
       <p className="text-gray-500 text-left">{body}</p>
 
-      <div className="flex justify-between w-90">
+      <div className="flex gap-3 flex-col justify-start md:justify-between md:flex-row md:w-full w-90">
         <h4 className="font-bold text-purple-700">
           {formatDuration(initDate, finishDate)}
         </h4>

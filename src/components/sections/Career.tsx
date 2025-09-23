@@ -10,7 +10,7 @@ const Career = () => {
         text="Minha trajetoria até aqui"
         className="font-extrabold text-3xl"
       />
-      <div className="grid grid-cols-2 h-screen w-screen text-center">
+      <div className="grid min-h-screen grid-cols-1 gap-8 p-8 lg:grid-cols-2 lg:gap-20">
         <div className="flex flex-col items-center gap-8">
           <h3 className="font-extrabold text-xl">Área profissional</h3>
           <CareerCard

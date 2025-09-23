@@ -68,7 +68,7 @@ const AboutMe: React.FC = () => {
   return (
     <motion.section
       ref={ref}
-      className="grid grid-cols-3 h-screen gap-5 items-center"
+      className="grid min-h-screen grid-cols-1 place-items-center gap-6 p-8 lg:grid-cols-3 lg:gap-8"
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "show" : "hidden"}
@@ -77,7 +77,7 @@ const AboutMe: React.FC = () => {
         <motion.img
           src={fotoPessoal}
           alt="Foto de Davi Conrado Neto no espelho"
-          className="object-cover rounded-full w-80 h-80 mx-auto"
+          className="object-cover rounded-full w-full max-w-xs aspect-square mx-auto"
           variants={imgVariants}
           initial="hidden"
           animate={isInView ? ["show", "float", "bubble"] : "hidden"}

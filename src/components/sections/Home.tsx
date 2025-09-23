@@ -20,7 +20,6 @@ const avatarVariants: Variants = {
     },
   },
   sway: {
-    scale: 1,
     rotate: [-2, 2, -2],
     y: [0, -10, 0],
     transition: {
@@ -31,21 +30,25 @@ const avatarVariants: Variants = {
   },
 };
 const Home = () => {
-  const [animation, setAnimation] = useState("hidden");
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimation("show");
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
   return (
-    <div className="grid grid-cols-3 h-screen">
-      <div className="flex flex-col justify-center gap-5">
+    <div className="grid min-h-screen grid-cols-1 place-items-center gap-8 p-8 lg:grid-cols-3 lg:gap-8">
+      <div className="flex w-full justify-center lg:order-2">
+        <div className="h-64 w-64 overflow-hidden rounded-full md:h-80 md:w-80">
+          <motion.img
+            src="avatar.svg"
+            alt="Avatar de Davi Conrado"
+            variants={avatarVariants}
+            initial="hidden"
+            animate={["show", "sway"]}
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center gap-5 text-center lg:order-1 lg:items-start lg:text-left">
         <ContentSummary emoji="👋" content="Saudações" />
         <TypingEffect
           text={`Davi\nConrado`}
-          className="font-extrabold text-5xl text-wrap"
+          className="text-4xl font-extrabold sm:text-5xl"
         />
         <TypingEffect
           text="Full-stack developer · Software Engineer"
@@ -58,7 +61,7 @@ const Home = () => {
             href="https://linkedin.com/in/daviconrado"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white bg-blue-600 hover:bg-blue-500 p-3 rounded-full transition-colors max-w-fit"
+            className="rounded-full bg-blue-600 p-3 text-white transition-colors hover:bg-blue-500"
             aria-label="LinkedIn Profile"
           >
             <FaLinkedin size={24} />
@@ -67,34 +70,18 @@ const Home = () => {
             href="https://github.com/daviconrado"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors max-w-fit"
+            className="rounded-full bg-gray-800 p-3 text-white transition-colors hover:bg-gray-700"
             aria-label="GitHub Profile"
           >
             <FaGithub size={24} />
           </a>
         </div>
       </div>
-      <div className="flex justify-center items-center">
-        <div className="w-62 h-62 md:w-84 md:h-84 lg:w-100 lg:h-100 rounded-full overflow-hidden">
-          <motion.img
-            src="avatar.svg"
-            alt=""
-            variants={avatarVariants}
-            initial="hidden"
-            animate={animation}
-            onAnimationComplete={(definition) => {
-              if (definition == "show") {
-                setAnimation("sway");
-              }
-            }}
-          />
-        </div>
-      </div>
-      <div className="flex flex-col justify-center items-end gap-4">
+      <div className="flex w-full justify-center lg:order-3 lg:justify-end">
         <a
           href="/curriculo.pdf"
           download
-          className="flex items-center gap-2 cursor-pointer text-purple-900 hover:text-purple-700 transition-colors border border-purple-800 hover:border-purple-600 px-4 py-2 rounded-lg max-w-fit"
+          className="flex max-w-fit cursor-pointer items-center gap-2 rounded-lg border border-purple-800 px-4 py-2 text-purple-900 transition-colors hover:border-purple-600 hover:text-purple-700"
         >
           <RiDownloadLine />
           Baixar CV

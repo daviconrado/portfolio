@@ -78,9 +78,9 @@ const Home = () => {
       </div>
       <div className="flex w-full justify-center lg:order-3 lg:justify-end">
         <a
-          href="/curriculo.pdf"
+          href="/Currículo - Davi Conrado.pdf"
           download
-          className="flex max-w-fit cursor-pointer items-center gap-2 rounded-lg border border-purple-800 px-4 py-2 text-purple-900 transition-colors hover:border-purple-600 hover:text-purple-700"
+          className="flex max-w-fit cursor-pointer items-center gap-2 rounded-lg border bg_summary border-purple-800 px-4 py-2 text-purple-900 transition-colors hover:border-purple-600 hover:text-purple-700"
         >
           <RiDownloadLine />
           Baixar CV

@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-screen h-18 bg_navbar flex justify-between items-center px-20">
+    <footer className="w-screen h-18 bg_navbar flex justify-between items-start lg:items-center lg:px-20 pb-33 pt-5 lg:py-0">
       <p className="font-light text-sm m-3">Copyright © Davi Conrado · 2025</p>
       <div className="flex gap-3">
         <a

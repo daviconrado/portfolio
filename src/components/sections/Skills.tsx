@@ -48,12 +48,12 @@ const Skills = () => {
     { Icon: FaAws, label: "AWS" },
   ];
   return (
-    <div className="flex flex-col justify-center items-center h-120 gap-8">
+    <div className="flex flex-col justify-center items-center h-120 gap-8 mx-4">
       <div className="flex flex-col justify-center items-center gap-4 mb-3">
         <ContentSummary emoji="💻" content=" Skills · Experiências" />
         <TypingEffect
           text="Tecnologias e habilidades"
-          className="font-extrabold text-3xl"
+          className="font-extrabold text-3xl text-center"
         />
       </div>
       <div className="flex flex-col gap-6 max-w-4xl text-center">

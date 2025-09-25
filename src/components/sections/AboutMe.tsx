@@ -102,15 +102,21 @@ const AboutMe: React.FC = () => {
           Prazer!
         </motion.p>
 
-        <motion.p variants={itemText}>
-          👨‍💻 Há mais de 1 ano desenvolvendo e programando interfaces com
-          Typescript, Spring Boot, React.js, Node.js.
-          <br /> 🎓 Acadêmico de Engenharia de Software na UTFPR em Dois
-          Vizinhos - PR. <br />
-          💡 Meus interesses se concentram na criação de soluções de ponta a
-          ponta para a web, abrangendo desde a interação do usuário até a
-          complexidade dos sistemas de dados.
-        </motion.p>
+        <motion.div variants={itemText} className="flex flex-col gap-2">
+          <p>
+            👨‍💻 Há mais de 1 ano desenvolvendo e programando interfaces com
+            Typescript, Spring Boot, React.js, Node.js.
+          </p>
+          <p>
+            🎓 Acadêmico de Engenharia de Software na UTFPR em Dois Vizinhos -
+            PR.
+          </p>
+          <p>
+            💡 Meus interesses se concentram na criação de soluções de ponta a
+            ponta para a web, abrangendo desde a interação do usuário até a
+            complexidade dos sistemas de dados.
+          </p>
+        </motion.div>
 
         <motion.p variants={itemText}>
           🚀 Tentando ser um pouquinho melhor do que ontem todos dias.

@@ -68,7 +68,7 @@ const AboutMe: React.FC = () => {
   return (
     <motion.section
       ref={ref}
-      className="grid min-h-screen grid-cols-1 place-items-center gap-6 p-8 lg:grid-cols-3 lg:gap-8"
+      className="grid min-h-screen grid-cols-1 place-items-center gap-6 p-8 lg:grid-cols-3 lg:gap-8 lg:min-h-1 lg:mb-40"
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "show" : "hidden"}

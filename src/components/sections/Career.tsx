@@ -4,7 +4,7 @@ import TypingEffect from "../textAnimations/TypingEffect";
 
 const Career = () => {
   return (
-    <div className="flex flex-col justify-center items-center gap-7 py-10">
+    <div className="flex flex-col justify-center items-center gap-7 py-10 lg:pb-0">
       <ContentSummary emoji="💼" content="Carreira" />
       <TypingEffect
         text="Minha trajetoria até aqui"
